@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+._*
+
+# Third-party copyrighted textbooks — not redistributed from this repo.
+# See the "Readings not included" section of README.md.
+File_Computational_Semantics_..._.473792/content/vanEijckUnger.pdf
+File_Jurafsky_and_Martin_3rd_..._.477424/content/ed3book_aug26.pdf
+File_Distributional_Semantics..._.477428/content/LenciSahlgren2023.pdf
+File_Geometric_Algebra_for_Co..._.477427/content/Geometric Algebra for Computer Science.pdf
