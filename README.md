@@ -78,7 +78,8 @@ contextual representations, alongside the algebra that underlies them.
 - Prediction — Details of SGNS · `session09_prediction.pdf`
 - SVD Word Embeddings: Where Did the Context Matrix Go? · `session09b_where_did_C_go.pdf`
 - Contextual Embeddings: Why a Word Should Not Have One Vector · `session09_contextual.pdf`
-- Bilinear Maps (updated 11 Oct 2026) · `bilinear_maps.pdf`
+- Binding: From Outer Products to Convolution — why HRR works, what it costs, and where the roles come from · `session11c_binding.pdf`
+  *(replaces the original "Bilinear Maps" file in this item)*
 - The Coproduct Behind the Product: Bilinear forms, Hopf algebras, and the geometric product · `special_hopf_coproduct.pdf`
   *(added directly to the repo, not part of the original Moodle export)*
 - Quiz 1 sample questions, with and without answers
