@@ -83,6 +83,9 @@ contextual representations, alongside the algebra that underlies them.
 
 ### Part III — The Algebraic Thread and Geometric Algebra (5 sessions)
 
+- The Coproduct Behind the Product: Bilinear forms, Hopf algebras, and the geometric product · `special_hopf_coproduct.pdf`
+  *(added directly to the repo, not part of the original Moodle export)*
+
 ### Part IV — Functional Geometric Algebra (8 sessions)
 
 ### Recitations and labs
