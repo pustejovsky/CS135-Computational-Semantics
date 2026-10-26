@@ -1,138 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Brandeis moodle environment - 263COSI-135B-1 : Computational Semantics</title>
-    <link rel="stylesheet" type="text/css" href=".//shared/moodle.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CS135 / COSI 135B — Computational Semantics</title>
+<meta name="description" content="Course site for Computational Semantics (263COSI-135B-1), Brandeis University — lectures, recitations, problem sets and readings.">
+<style>
+  :root{
+    --bg:#faf9f7; --bg-raised:#ffffff; --ink:#1c1b19; --ink-soft:#57534e;
+    --ink-faint:#8a8580; --line:#e7e3dc; --accent:#8d4f2a; --accent-ink:#ffffff;
+    --accent-soft:#f3e6da; --pdf:#b4472f; --html:#2f6b4f; --ext:#3a5a8c;
+    --missing:#9a8f82; --code:#f1ede5; --shadow: 0 1px 2px rgba(28,27,25,.04), 0 4px 16px rgba(28,27,25,.05);
+    --radius:14px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#17150f; --bg-raised:#211e17; --ink:#f1ede4; --ink-soft:#c9c2b6;
+      --ink-faint:#8f8777; --line:#38342a; --accent:#e3a276; --accent-ink:#1c1308;
+      --accent-soft:#3a2c1c; --pdf:#e08568; --html:#7fc89a; --ext:#8fb4e8;
+      --missing:#6f6a5e; --code:#2a2619; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.5; -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent); text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px}
+
+  header.hero{
+    border-bottom:1px solid var(--line); padding:56px 0 36px; background:var(--bg-raised);
+  }
+  .kicker{
+    text-transform:uppercase; letter-spacing:.08em; font-size:12.5px; font-weight:700;
+    color:var(--accent); margin:0 0 10px;
+  }
+  h1{font-size:clamp(28px,4vw,40px); line-height:1.15; margin:0 0 10px; letter-spacing:-.01em}
+  .byline{color:var(--ink-soft); font-size:16px; margin:0 0 20px}
+  .byline a{color:var(--ink-soft); text-decoration:underline}
+  .hero-links{display:flex; gap:10px; flex-wrap:wrap}
+  .pill{
+    display:inline-flex; align-items:center; gap:6px; font-size:13.5px; font-weight:600;
+    padding:7px 14px; border-radius:999px; border:1px solid var(--line); color:var(--ink);
+    background:var(--bg); white-space:nowrap;
+  }
+  .pill:hover{border-color:var(--accent); text-decoration:none}
+  .pill.primary{background:var(--accent); color:var(--accent-ink); border-color:var(--accent)}
+
+  nav.toc{
+    position:sticky; top:0; z-index:10; background:var(--bg); border-bottom:1px solid var(--line);
+    overflow-x:auto; white-space:nowrap; backdrop-filter:blur(6px);
+  }
+  nav.toc .wrap{display:flex; gap:4px; padding:10px 24px}
+  nav.toc a{
+    color:var(--ink-soft); font-size:13.5px; font-weight:600; padding:7px 12px; border-radius:8px;
+  }
+  nav.toc a:hover{background:var(--accent-soft); color:var(--accent); text-decoration:none}
+
+  main{padding:40px 0 80px}
+  section{margin-bottom:52px}
+  section > h2{
+    font-size:13px; text-transform:uppercase; letter-spacing:.07em; color:var(--ink-faint);
+    margin:0 0 4px; font-weight:700;
+  }
+  section > h3{font-size:24px; margin:4px 0 6px; letter-spacing:-.005em}
+  section > p.blurb{color:var(--ink-soft); margin:0 0 20px; font-size:15px; max-width:640px}
+
+  .list{display:flex; flex-direction:column; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:var(--bg-raised); box-shadow:var(--shadow)}
+  .row{
+    display:flex; align-items:center; gap:14px; padding:13px 18px; border-bottom:1px solid var(--line);
+  }
+  .list .row:last-child{border-bottom:none}
+  .row:hover{background:var(--accent-soft)}
+  .row.disabled:hover{background:transparent}
+  .row a.title-link{flex:1; color:var(--ink); font-size:15px; font-weight:500; min-width:0}
+  .row a.title-link:hover{color:var(--accent); text-decoration:none}
+  .row .title-link .sub{display:block; color:var(--ink-faint); font-size:12.5px; font-weight:400; margin-top:1px}
+  .row.disabled .title-link{color:var(--ink-faint); cursor:default}
+  .badge{
+    flex-shrink:0; font-size:10.5px; font-weight:800; letter-spacing:.04em; padding:3px 7px;
+    border-radius:5px; text-transform:uppercase;
+  }
+  .badge.pdf{color:var(--pdf); background:color-mix(in srgb, var(--pdf) 14%, transparent)}
+  .badge.html{color:var(--html); background:color-mix(in srgb, var(--html) 14%, transparent)}
+  .badge.ext{color:var(--ext); background:color-mix(in srgb, var(--ext) 14%, transparent)}
+  .badge.missing{color:var(--missing); background:color-mix(in srgb, var(--missing) 18%, transparent)}
+  .missing-link{flex-shrink:0; font-size:12.5px; font-weight:600}
+
+  hr.rule{border:none; border-top:1px dashed var(--line); margin:28px 0}
+
+  .note{
+    border:1px solid var(--line); background:var(--bg-raised); border-radius:var(--radius);
+    padding:18px 20px; font-size:14.5px; color:var(--ink-soft); box-shadow:var(--shadow);
+  }
+  .note code{background:var(--code); padding:1px 6px; border-radius:5px; font-size:13px}
+  .note a{font-weight:600}
+
+  footer{border-top:1px solid var(--line); padding:32px 0 48px; color:var(--ink-faint); font-size:13.5px}
+  footer a{color:var(--ink-faint); text-decoration:underline}
+
+  @media (max-width:600px){
+    header.hero{padding:40px 0 28px}
+    .row{padding:12px 14px}
+  }
+</style>
 </head>
 <body>
-    <div class="d-flex flex-column h-100">
-        <nav class="navbar bg-body border-bottom">
-            <div class="container-fluid p-0">
-                <a class="navbar-brand" href="https://moodle.brandeis.edu" title="Brandeis moodle environment">
-                    Brandeis moodle environment
-                </a>
-            </div>
-        </nav>
-        <main class="container-fluid mt-2 flex-grow-1 flex-shrink-1">
-            <div>
-                <h1><a href="./index.html">263COSI-135B-1 : Computational Semantics</a></h1>
-                <p>263COSI-135B-1</p>
-                    <div class="alert alert-info alert-block">
-        This file is part of the content downloaded from <a href="https://moodle.brandeis.edu/course/view.php?id=6309">263COSI-135B-1 : Computational Semantics</a>.
-    </div>
-    <div>
-        <a href="./about.html">Course summary</a>
-    </div>
 
-    <div>
-        <h3></h3>
-        <ul>
-            <li><a href="./Subsection_Course_Description..._.473770/index.html">Course Description and Syllabus (Subsection)</a></li>
-            <li><a href="./Forum_Ask_the_Class_.400841/index.html">Ask the Class (Forum)</a></li>
-            <li><a href="./External_tool_Library_Researc..._.400842/index.html">Library Research Guide (External tool)</a></li>
-        </ul>
-        <hr>
-        <h3>Part I — Meaning as Logic (6 sessions)</h3>
-        <ul>
-            <li><a href="./File_Computational_Semantics_..._.473792/index.html">Computational Semantics -- van Eijck and Unger (File)</a></li>
-            <li><a href="./File_Linear_Algebra_--_Self-a..._.477403/index.html">Linear Algebra -- Self-assessment (File)</a></li>
-            <li><a href="./File_Linear_Algebra_self-asse..._.475284/index.html">Linear Algebra self-assessment answers (File)</a></li>
-            <li><a href="./Feedback_Anonymous_Linear_Alg..._.475558/index.html">Anonymous Linear Algebra Self-assessment Form (Feedback)</a></li>
-            <li><a href="./File_Linear_Algebra_Review_Guide_.477551/index.html">Linear Algebra Review Guide (File)</a></li>
-            <li><a href="./File_Haskell_Review_Companion_.479463/index.html">Haskell Review Companion (File)</a></li>
-            <li><a href="./File_Lecture_1_--_82826_corre..._.478874/index.html">Lecture 1 -- 8/28/26 (corrected 9/8/26) (File)</a></li>
-            <li><a href="./File_Lecture_2_--_Semantic_Types_.477394/index.html">Lecture 2 -- Semantic Types (File)</a></li>
-            <li><a href="./File_Lecture_2_--_Computation..._.477399/index.html">Lecture 2 -- Computational Semantics from the NLP Perspective (File)</a></li>
-            <li><a href="./File_Lecture_3_--_Predicate_L..._.477415/index.html">Lecture 3 -- Predicate Logic (File)</a></li>
-            <li><a href="./File_Details_of_Lambda_Calcul..._.478188/index.html">Details of Lambda Calculus Syntax and de Bruijn Indexing (File)</a></li>
-            <li><a href="./File_The_Fragment_of_English_.478865/index.html">The Fragment of English (File)</a></li>
-            <li><a href="./File_Lecture_5_--_Quantifier_..._.478866/index.html">Lecture 5 -- Quantifier Scope (File)</a></li>
-            <li><a href="./File_Lecture_5_Extra_-_Monoto..._.481650/index.html">Lecture 5 Extra - Monotonicity (File)</a></li>
-            <li><a href="./File_Lecture_5_Extra_-_Negati..._.481651/index.html">Lecture 5 Extra - Negative Polarity Items (NPIs) (File)</a></li>
-            <li><a href="./File_Lecture_5_Extra_-_Taking..._.481652/index.html">Lecture 5 Extra - Taking Stock (File)</a></li>
-            <li><a href="./File_Lecture_6_-_Beyond_the_S..._.481653/index.html">Lecture 6 - Beyond the Sentence (File)</a></li>
-        </ul>
-        <hr>
-        <h3>Part II — Meaning as Distribution (4 sessions)</h3>
-        <ul>
-            <li><a href="./File_Jurafsky_and_Martin_3rd_..._.477424/index.html">Jurafsky and Martin 3rd Edition (August 2026) (File)</a></li>
-            <li><a href="./File_Distributional_Semantics..._.477428/index.html">Distributional Semantics -- Lenci and Sahlgren (2023) (File)</a></li>
-            <li><a href="./File_Review_of_Lenci_and_Sahl..._.477431/index.html">Review of Lenci and Sahlgren, Pustejovsky (2024) (File)</a></li>
-            <li><a href="./File_Lecture_6_-_Linear_Algeb..._.481692/index.html">Lecture 6 - Linear Algebra Refresher for Formal Semantics (File)</a></li>
-            <li><a href="./File_Lecture_6_-_Types_as_Vec..._.481672/index.html">Lecture 6 - Types as Vectors (File)</a></li>
-            <li><a href="./File_Lecture_7_--_Distributio..._.482645/index.html">Lecture 7 -- Distributional Semantics (File)</a></li>
-            <li><a href="./File_Lecture_8_--_Reduction_a..._.482646/index.html">Lecture 8 -- Reduction and Prediction (File)</a></li>
-            <li><a href="./File_-DCS_Dependency-Based_Co..._.485034/index.html">λ-DCS: Dependency-Based Compositional Semantics (File)</a></li>
-            <li><a href="./File_Reduction_II_What_the_SV..._.485035/index.html">Reduction II: What the SVD Actually Does (File)</a></li>
-            <li><a href="./File_Count-Based_NLP_.485036/index.html">Count-Based NLP (File)</a></li>
-            <li><a href="./File_What_the_Inner_Product_L..._.485037/index.html">What the Inner Product Left Out (File)</a></li>
-            <li><a href="./File_Mechanisms_of_Skipgram_w..._.485038/index.html">Mechanisms of Skipgram with Negative Sampling (File)</a></li>
-            <li><a href="./File_Contextual_Embeddings__W..._.485039/index.html">Contextual Embeddings  Why a Word Should Not Have One Vector (File)</a></li>
-            <li><a href="./File_Prediction_-_Details_of_..._.485040/index.html">Prediction - Details of SGNS (File)</a></li>
-            <li><a href="./File_SVD_Word_Embeddings_Wher..._.485044/index.html">SVD Word Embeddings: Where Did the Context Matrix Go? (File)</a></li>
-            <li><a href="./File_Bilinear_Maps_Updated_10..._.488031/index.html">Bilinear Maps (Updated 10/11/26) with new material (File)</a></li>
-            <li><a href="./File_Quiz_1_Sample_Questions_..._.488027/index.html">Quiz 1 Sample Questions for Study (File)</a></li>
-            <li><a href="./File_Quiz_1_Sample_Questions_..._.488028/index.html">Quiz 1 Sample Questions with Answers (File)</a></li>
-        </ul>
-        <hr>
-        <h3>Part III — The Algebraic Thread and Geometric Algebra (5 sessions)</h3>
-        <ul>
-            <li><a href="./File_Geometric_Algebra_for_Co..._.477427/index.html">Geometric Algebra for Computer Science (File)</a></li>
-        </ul>
-        <hr>
-        <h3>Part IV — Functional Geometric Algebra (8 sessions)</h3>
-        <hr>
-        <h3>Projects</h3>
-        <hr>
-        <h3>Recitations</h3>
-        <ul>
-            <li><a href="./File_Lab_1_Haskell_-_setup_an..._.478566/index.html">Lab 1: Haskell - setup and basics (File)</a></li>
-            <li><a href="./File_Lab_2_Haskell_-_Data_typ..._.480378/index.html">Lab 2: Haskell - Data types, Function application, Higher-order functions (File)</a></li>
-            <li><a href="./File_Recitation_4_-_distribut..._.485074/index.html">Recitation 4 - distributional semantics (File)</a></li>
-            <li><a href="./File_Recitation_5_-_why_go_lo..._.485075/index.html">Recitation 5 - why go low-dimensional (File)</a></li>
-            <li><a href="./File_Recitation_6_-_Prelude_VSA_.486792/index.html">Recitation 6 - Prelude VSA (File)</a></li>
-            <li><a href="./File_Recitation_7_-_Quiz_1_re..._.487969/index.html">Recitation 7 - Quiz 1 review (File)</a></li>
-        </ul>
-        <hr>
-        <h3>Problem Sets</h3>
-        <ul>
-            <li><a href="./Assignment_Problem_Set_1_.478573/index.html">Problem Set 1 (Assignment)</a></li>
-            <li><a href="./Assignment_Problem_Set_2_.485261/index.html">Problem Set 2 (Assignment)</a></li>
-        </ul>
-        <hr>
-        <h3></h3>
-        <hr>
-        <h3></h3>
-        <hr>
-        <h3></h3>
-        <hr>
-        <h3></h3>
-        <hr>
-        <h3></h3>
-        <hr>
-        <h3></h3>
-        <hr>
-        <h3></h3>
-        <hr>
-        <h3></h3>
-        <hr>
-        <h3>Course Description and Syllabus</h3>
-        <ul>
-            <li><a href="./Forum_News_amp_Announcements_.400840/index.html">News &amp; Announcements (Forum)</a></li>
-            <li><a href="./File_Course_Syllabus_.474050/index.html">Course Syllabus (File)</a></li>
-        </ul>
-        <hr>
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">263COSI‑135B‑1 · Brandeis University · Fall 2026</p>
+    <h1>Computational Semantics</h1>
+    <p class="byline">Taught by James Pustejovsky — lectures, recitations, problem sets and readings, mirrored from the course Moodle site.</p>
+    <div class="hero-links">
+      <a class="pill primary" href="#part-i">Start reading →</a>
+      <a class="pill" href="https://github.com/pustejovsky/CS135-Computational-Semantics">GitHub repo</a>
+      <a class="pill" href="moodle-export.html">Original Moodle export</a>
+      <a class="pill" href="https://moodle.brandeis.edu/course/view.php?id=6309">Moodle (Brandeis login)</a>
     </div>
+  </div>
+</header>
 
-            </div>
-        </main>
-        <footer id="page-footer" class="py-3">
-            <div class="container">
-                <div>This file is part of the content downloaded from <a href="https://moodle.brandeis.edu/course/view.php?id=6309">263COSI-135B-1 : Computational Semantics</a> by James Pustejovsky on Wednesday, October 21, 2026, 2:02 PM.</div>
-            </div>
-        </footer>
+<nav class="toc">
+  <div class="wrap">
+    <a href="#part-i">Part I</a>
+    <a href="#part-ii">Part II</a>
+    <a href="#part-iii">Part III</a>
+    <a href="#recitations">Recitations</a>
+    <a href="#problem-sets">Problem sets</a>
+    <a href="#syllabus">Syllabus</a>
+    <a href="#about">About this site</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section id="part-i">
+    <h2>Part I</h2>
+    <h3>Meaning as Logic</h3>
+    <p class="blurb">Lambda calculus, semantic types and predicate logic, building a compositional fragment of English up through quantifier scope, monotonicity and negative polarity.</p>
+    <div class="list">
+      <div class="row"><a class="title-link" href="File_Computational_Semantics_..._.473792/index.html">van Eijck &amp; Unger, <em>Computational Semantics with Functional Programming</em><span class="sub">Not mirrored here — Cambridge University Press, 2010</span></a><a class="missing-link" href="https://www.cambridge.org/9780521760300">source ↗</a><span class="badge ext">external</span></div>
+      <div class="row"><a class="title-link" href="File_Linear_Algebra_--_Self-a..._.477403/content/CS135_LinearAlgebra_SelfAssessment.pdf">Linear Algebra — Self‑assessment</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_Linear_Algebra_self-asse..._.475284/content/CS135_SelfAssessment_AnswerKey.pdf">Linear Algebra self‑assessment — answer key</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="Feedback_Anonymous_Linear_Alg..._.475558/index.html">Anonymous Linear Algebra self‑assessment form<span class="sub">Feedback activity</span></a><span class="badge html">HTML</span></div>
+      <div class="row"><a class="title-link" href="File_Linear_Algebra_Review_Guide_.477551/content/CS135_LinearAlgebra_ReviewGuide.pdf">Linear Algebra Review Guide</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_Haskell_Review_Companion_.479463/content/haskell_reference.pdf">Haskell Review Companion</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_Lecture_1_--_82826_corre..._.478874/content/session01_intro_lambda.pdf">Lecture 1 — Introduction &amp; Lambda Calculus<span class="sub">8/28/26, corrected 9/8/26</span></a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_Details_of_Lambda_Calcul..._.478188/content/session01a_conversions_debruijn.pdf">Details of Lambda Calculus Syntax &amp; de Bruijn Indexing</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_Lecture_2_--_Semantic_Types_.477394/content/session02_semantic_types.pdf">Lecture 2 — Semantic Types</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_Lecture_2_--_Computation..._.477399/content/session02alt_nlp_view.pdf">Lecture 2 — Computational Semantics from the NLP Perspective</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_Lecture_3_--_Predicate_L..._.477415/content/session03_predicate_logic.pdf">Lecture 3 — Predicate Logic</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_The_Fragment_of_English_.478865/content/session04_fragment.pdf">The Fragment of English</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_Lecture_5_--_Quantifier_..._.478866/content/session05_quantifiers_scope.pdf">Lecture 5 — Quantifier Scope</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_Lecture_5_Extra_-_Monoto..._.481650/content/session05a_monotonicity.pdf">Lecture 5 Extra — Monotonicity</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_Lecture_5_Extra_-_Negati..._.481651/content/session05b_npi.pdf">Lecture 5 Extra — Negative Polarity Items (NPIs)</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_Lecture_5_Extra_-_Taking..._.481652/content/Session05-positioning.pdf">Lecture 5 Extra — Taking Stock</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_Lecture_6_-_Beyond_the_S..._.481653/content/session06_beyond_sentence.pdf">Lecture 6 — Beyond the Sentence</a><span class="badge pdf">PDF</span></div>
     </div>
+  </section>
+
+  <section id="part-ii">
+    <h2>Part II</h2>
+    <h3>Meaning as Distribution</h3>
+    <p class="blurb">Count‑based vector spaces, SVD and prediction‑based embeddings through to contextual representations — plus the linear algebra underneath them.</p>
+    <div class="list">
+      <div class="row"><a class="title-link" href="File_Jurafsky_and_Martin_3rd_..._.477424/index.html">Jurafsky &amp; Martin, <em>Speech and Language Processing</em>, 3rd ed. draft (Aug 2026)<span class="sub">Not mirrored here — free from the authors</span></a><a class="missing-link" href="https://web.stanford.edu/~jurafsky/slp3/">source ↗</a><span class="badge ext">external</span></div>
+      <div class="row"><a class="title-link" href="File_Distributional_Semantics..._.477428/index.html">Lenci &amp; Sahlgren (2023), <em>Distributional Semantics</em><span class="sub">Not mirrored here — Cambridge University Press</span></a><a class="missing-link" href="https://www.cambridge.org/9781107004292">source ↗</a><span class="badge ext">external</span></div>
+      <div class="row"><a class="title-link" href="File_Review_of_Lenci_and_Sahl..._.477431/content/Pustejovsky-Review-LENCI-SAHLGREN-DistributionalSemantics.pdf">Pustejovsky's review of Lenci &amp; Sahlgren (2024)</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_Lecture_6_-_Linear_Algeb..._.481692/content/session05c_la_refresher.pdf">Lecture 6 — Linear Algebra Refresher for Formal Semantics</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_Lecture_6_-_Types_as_Vec..._.481672/content/session06b_types_as_vectors.pdf">Lecture 6 — Types as Vectors</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_-DCS_Dependency-Based_Co..._.485034/content/session06a_lambda_dcs.pdf">λ‑DCS: Dependency‑Based Compositional Semantics</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_Lecture_7_--_Distributio..._.482645/content/session07_distributional.pdf">Lecture 7 — Distributional Semantics</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_Lecture_8_--_Reduction_a..._.482646/content/session08_reduction.pdf">Lecture 8 — Reduction and Prediction</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_Reduction_II_What_the_SV..._.485035/content/session08b_svd_geometry.pdf">Reduction II: What the SVD Actually Does</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_Count-Based_NLP_.485036/content/session08c_count_based_nlp.pdf">Count‑Based NLP</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_What_the_Inner_Product_L..._.485037/content/session08d_inner_product.pdf">What the Inner Product Left Out</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_Mechanisms_of_Skipgram_w..._.485038/content/session08e_sgns_mechanics.pdf">Mechanisms of Skipgram with Negative Sampling</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_Contextual_Embeddings__W..._.485039/content/session09_contextual.pdf">Contextual Embeddings — Why a Word Should Not Have One Vector</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_Prediction_-_Details_of_..._.485040/content/session09_prediction.pdf">Prediction — Details of SGNS</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_SVD_Word_Embeddings_Wher..._.485044/content/session09b_where_did_C_go.pdf">SVD Word Embeddings: Where Did the Context Matrix Go?</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_Bilinear_Maps_Updated_10..._.488031/content/bilinear_maps.pdf">Bilinear Maps<span class="sub">Updated 10/11/26 with new material</span></a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_Quiz_1_Sample_Questions_..._.488027/content/Quiz%201%20Sample%20Questions.pdf">Quiz 1 Sample Questions</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_Quiz_1_Sample_Questions_..._.488028/content/quiz1-sample-problems-answered.pdf">Quiz 1 Sample Questions — with answers</a><span class="badge pdf">PDF</span></div>
+    </div>
+  </section>
+
+  <section id="part-iii">
+    <h2>Part III</h2>
+    <h3>The Algebraic Thread and Geometric Algebra</h3>
+    <p class="blurb">Five sessions. Part IV (Functional Geometric Algebra, 8 sessions) follows but has no posted materials yet.</p>
+    <div class="list">
+      <div class="row"><a class="title-link" href="File_Geometric_Algebra_for_Co..._.477427/index.html">Dorst, Fontijne &amp; Mann, <em>Geometric Algebra for Computer Science</em><span class="sub">Not mirrored here — Morgan Kaufmann, 2007</span></a><a class="missing-link" href="https://www.elsevier.com/books/9780123749420">source ↗</a><span class="badge ext">external</span></div>
+    </div>
+  </section>
+
+  <section id="recitations">
+    <h2>Recitations</h2>
+    <h3>Labs &amp; recitation slides</h3>
+    <div class="list">
+      <div class="row"><a class="title-link" href="File_Lab_1_Haskell_-_setup_an..._.478566/content/lab_1.html">Lab 1 — Haskell: setup and basics</a><span class="badge html">HTML</span></div>
+      <div class="row"><a class="title-link" href="File_Lab_2_Haskell_-_Data_typ..._.480378/content/lab_2.html">Lab 2 — Haskell: data types, function application, higher‑order functions</a><span class="badge html">HTML</span></div>
+      <div class="row"><a class="title-link" href="File_Recitation_4_-_distribut..._.485074/content/recitation3.pdf">Recitation 4 — Distributional semantics</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="File_Recitation_5_-_why_go_lo..._.485075/content/slides.html">Recitation 5 — Why go low‑dimensional</a><span class="badge html">HTML</span></div>
+      <div class="row"><a class="title-link" href="File_Recitation_6_-_Prelude_VSA_.486792/content/slides.html">Recitation 6 — Prelude to VSA</a><span class="badge html">HTML</span></div>
+      <div class="row"><a class="title-link" href="File_Recitation_7_-_Quiz_1_re..._.487969/content/slides.html">Recitation 7 — Quiz 1 review</a><span class="badge html">HTML</span></div>
+    </div>
+  </section>
+
+  <section id="problem-sets">
+    <h2>Problem sets</h2>
+    <h3>Assignments</h3>
+    <div class="list">
+      <div class="row"><a class="title-link" href="Assignment_Problem_Set_1_.478573/index.html">Problem Set 1<span class="sub">Assignment — submissions not included in this export</span></a><span class="badge html">HTML</span></div>
+      <div class="row"><a class="title-link" href="Assignment_Problem_Set_2_.485261/index.html">Problem Set 2<span class="sub">Assignment — submissions not included in this export</span></a><span class="badge html">HTML</span></div>
+    </div>
+  </section>
+
+  <section id="syllabus">
+    <h2>Course information</h2>
+    <h3>Syllabus &amp; announcements</h3>
+    <div class="list">
+      <div class="row"><a class="title-link" href="Subsection_Course_Description..._.473770/index.html">Course Description and Syllabus<span class="sub">Subsection overview</span></a><span class="badge html">HTML</span></div>
+      <div class="row"><a class="title-link" href="File_Course_Syllabus_.474050/content/CS135_Fall2026.pdf">Course Syllabus — Fall 2026</a><span class="badge pdf">PDF</span></div>
+      <div class="row"><a class="title-link" href="Forum_News_amp_Announcements_.400840/index.html">News &amp; Announcements<span class="sub">Forum</span></a><span class="badge html">HTML</span></div>
+      <div class="row"><a class="title-link" href="Forum_Ask_the_Class_.400841/index.html">Ask the Class<span class="sub">Forum</span></a><span class="badge html">HTML</span></div>
+      <div class="row"><a class="title-link" href="External_tool_Library_Researc..._.400842/index.html">Library Research Guide<span class="sub">External tool</span></a><span class="badge html">HTML</span></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About this site</h2>
+    <h3>How it's built</h3>
+    <div class="note">
+      This page is a hand‑built index over a verbatim export of the course's
+      <a href="https://moodle.brandeis.edu/course/view.php?id=6309">Brandeis Moodle site</a>,
+      taken 21 October 2026. Every link above opens the original file from the export —
+      nothing has been re‑hosted or re‑typeset. The raw Moodle front page is still here too,
+      at <a href="moodle-export.html">moodle-export.html</a>.
+      <br><br>
+      Four third‑party textbooks referenced in Part II and Part III
+      (<em>Speech and Language Processing</em>, <em>Distributional Semantics</em>,
+      <em>Geometric Algebra for Computer Science</em>, and the van Eijck &amp; Unger course text)
+      are marked <span class="badge ext" style="vertical-align:1px">external</span> — they're
+      under third‑party copyright and aren't redistributed in this repository. Each links out to
+      where you can get it instead.
+      <br><br>
+      Source and full README: <a href="https://github.com/pustejovsky/CS135-Computational-Semantics">github.com/pustejovsky/CS135-Computational-Semantics</a>.
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    263COSI‑135B‑1 — Computational Semantics · James Pustejovsky · Brandeis University · Fall 2026<br>
+    Course materials shared for students and reference; please credit the author and course if reused.
+  </div>
+</footer>
+
 </body>
 </html>
