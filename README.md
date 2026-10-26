@@ -79,12 +79,11 @@ contextual representations, alongside the algebra that underlies them.
 - SVD Word Embeddings: Where Did the Context Matrix Go? · `session09b_where_did_C_go.pdf`
 - Contextual Embeddings: Why a Word Should Not Have One Vector · `session09_contextual.pdf`
 - Bilinear Maps (updated 11 Oct 2026) · `bilinear_maps.pdf`
+- The Coproduct Behind the Product: Bilinear forms, Hopf algebras, and the geometric product · `special_hopf_coproduct.pdf`
+  *(added directly to the repo, not part of the original Moodle export)*
 - Quiz 1 sample questions, with and without answers
 
 ### Part III — The Algebraic Thread and Geometric Algebra (5 sessions)
-
-- The Coproduct Behind the Product: Bilinear forms, Hopf algebras, and the geometric product · `special_hopf_coproduct.pdf`
-  *(added directly to the repo, not part of the original Moodle export)*
 
 ### Part IV — Functional Geometric Algebra (8 sessions)
 
