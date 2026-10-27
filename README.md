@@ -94,6 +94,8 @@ contextual representations, alongside the algebra that underlies them.
   *(added directly to the repo, not part of the original Moodle export)*
 - Vector Symbolic Architectures — structure without symbols, and where the symbols come back · `session12_vsa.pdf`
   *(added directly to the repo, not part of the original Moodle export)*
+- Quadratic Forms and the Clifford Product — from the diagonal of a bilinear form to the algebra it specifies · `session13_quadratic_forms.pdf`
+  *(added directly to the repo, not part of the original Moodle export)*
 
 ### Part IV — Functional Geometric Algebra (8 sessions)
 
