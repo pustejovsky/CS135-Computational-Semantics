@@ -84,15 +84,16 @@ contextual representations, alongside the algebra that underlies them.
   *(replaces the original "Bilinear Maps" file in this item)*
 - Bonus: The Fold in Machine Learning — compressing outer products and weight matrices, and a word that means several other things · `session11c_bonus_fold_ml.pdf`
   *(added directly to the repo, not part of the original Moodle export)*
-- The Fourier Transform, Typed — a matrix–vector product, a fast factorization, and a change of basis that changes what coordinates mean · `session11f_fourier_typed.pdf`
-  *(added directly to the repo, not part of the original Moodle export)*
-- Vector Symbolic Architectures — structure without symbols, and where the symbols come back · `session12_vsa.pdf`
-  *(added directly to the repo, not part of the original Moodle export)*
 - The Coproduct Behind the Product: Bilinear forms, Hopf algebras, and the geometric product · `special_hopf_coproduct.pdf`
   *(added directly to the repo, not part of the original Moodle export)*
 - Quiz 1 sample questions, with and without answers
 
 ### Part III — The Algebraic Thread and Geometric Algebra (5 sessions)
+
+- The Fourier Transform, Typed — a matrix–vector product, a fast factorization, and a change of basis that changes what coordinates mean · `session11f_fourier_typed.pdf`
+  *(added directly to the repo, not part of the original Moodle export)*
+- Vector Symbolic Architectures — structure without symbols, and where the symbols come back · `session12_vsa.pdf`
+  *(added directly to the repo, not part of the original Moodle export)*
 
 ### Part IV — Functional Geometric Algebra (8 sessions)
 
