@@ -1,7 +1,8 @@
 # CS135 / COSI 135B — Computational Semantics
 
 Course materials for **263COSI-135B-1: Computational Semantics**, Brandeis University,
-Fall 2026 — taught by [James Pustejovsky](https://www.cs.brandeis.edu/~jamesp/).
+Fall 2026 — taught by [James Pustejovsky](https://www.cs.brandeis.edu/~jamesp/), with
+Teaching Assistant Bohan Jiang.
 
 This repository is a preserved export of the course Moodle site
 (`moodle.brandeis.edu/course/view.php?id=6309`, exported 21 October 2026). The original
