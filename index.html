@@ -262,11 +262,22 @@
         <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
           <path d="M0,0 L8,4 L0,8 Z" fill="var(--accent)"></path>
         </marker>
+        <marker id="arrowhead-sm" markerWidth="6" markerHeight="6" refX="4.5" refY="3" orient="auto">
+          <path d="M0,0 L6,3 L0,6 Z" fill="var(--accent)"></path>
+        </marker>
       </defs>
-      <path d="M40,160 L150,160 L190,60 L80,60 Z" fill="var(--accent)" fill-opacity="0.06" stroke="var(--accent)" stroke-opacity="0.22" stroke-width="1.5"></path>
-      <line x1="40" y1="160" x2="146" y2="160" stroke="var(--accent)" stroke-opacity="0.35" stroke-width="2" marker-end="url(#arrowhead)"></line>
-      <line x1="40" y1="160" x2="77" y2="64" stroke="var(--accent)" stroke-opacity="0.35" stroke-width="2" marker-end="url(#arrowhead)"></line>
-      <path d="M70,160 A30,30 0 0,0 52,132" stroke="var(--accent)" stroke-opacity="0.25" stroke-width="1.5" fill="none"></path>
+      <!-- the oriented plane element a∧b -->
+      <path d="M40,160 L150,160 L190,60 L80,60 Z" fill="var(--accent)" fill-opacity="0.15" stroke="var(--accent)" stroke-opacity="0.3" stroke-width="1.5"></path>
+      <!-- vector a -->
+      <line x1="40" y1="160" x2="144" y2="160" stroke="var(--accent)" stroke-opacity="0.55" stroke-width="2.2" marker-end="url(#arrowhead)"></line>
+      <text x="152" y="174" font-family="var(--display)" font-style="italic" font-size="18" fill="var(--accent)" fill-opacity="0.6">a</text>
+      <!-- vector b -->
+      <line x1="40" y1="160" x2="78" y2="66" stroke="var(--accent)" stroke-opacity="0.55" stroke-width="2.2" marker-end="url(#arrowhead)"></line>
+      <text x="82" y="52" font-family="var(--display)" font-style="italic" font-size="18" fill="var(--accent)" fill-opacity="0.6">b</text>
+      <!-- rotational sense of the bivector, sweeping from a toward b -->
+      <path d="M86,160 Q88,127 57,118" stroke="var(--accent)" stroke-opacity="0.45" stroke-width="1.6" fill="none" marker-end="url(#arrowhead-sm)"></path>
+      <!-- a∧b label -->
+      <text x="124" y="122" font-family="var(--display)" font-style="italic" font-weight="600" font-size="22" fill="var(--accent)" fill-opacity="0.4">a∧b</text>
     </svg>
   </div>
   <div class="wrap">
