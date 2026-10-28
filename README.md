@@ -93,11 +93,15 @@ contextual representations, alongside the algebra that underlies them.
 
 - The Fourier Transform, Typed — a matrix–vector product, a fast factorization, and a change of basis that changes what coordinates mean · `session11f_fourier_typed.pdf`
   *(added directly to the repo, not part of the original Moodle export)*
-- Holographic Reduced Representations — Plate's system, step by step · `session12a_hrr.pdf`
-  *(added directly to the repo, not part of the original Moodle export)*
 - Vector Symbolic Architectures — structure without symbols, and where the symbols come back · `session12_vsa.pdf`
   *(added directly to the repo, not part of the original Moodle export)*
 - Quadratic Forms and the Clifford Product — from the diagonal of a bilinear form to the algebra it specifies · `session13_quadratic_forms.pdf`
+  *(added directly to the repo, not part of the original Moodle export)*
+- Holographic Reduced Representations — Plate's system, step by step · `session12a_hrr.pdf`
+  *(added directly to the repo, not part of the original Moodle export)*
+- Autocorrelation — how a vector overlaps its own shifted copies, and why HRR decoding depends on it · `session12a_autocorrelation.pdf`
+  *(added directly to the repo, not part of the original Moodle export)*
+- How HRR Learns — storing, gradients, and the comparison with learned bilinear maps and attention · `session12a_hrr_learning.pdf`
   *(added directly to the repo, not part of the original Moodle export)*
 
 ### Part IV — Functional Geometric Algebra (8 sessions)
