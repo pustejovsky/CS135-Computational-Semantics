@@ -35,6 +35,18 @@ File_Lecture_3_--_Predicate_L..._.477415/
 Forum, Assignment, Feedback and External-tool items contain only `index.html`
 (their submissions and posts are not part of a content export).
 
+The site header has a **Search** button (`⌘K`/`Ctrl K`) that searches titles,
+subtitles and the full text of every mirrored PDF/HTML reading, built from
+[`search-index.json`](search-index.json). After adding, removing or renaming a
+reading in `index.html`, regenerate it with:
+
+```bash
+python3 tools/build_search_index.py
+```
+
+(requires `pdftotext`, from `poppler` — `brew install poppler`). The four
+unmirrored textbooks below are never read by this script.
+
 ---
 
 ## Course outline
