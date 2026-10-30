@@ -17,7 +17,7 @@
     --ink-faint:#889a9c; --line:#dbe9eb; --line-strong:#b4cdd0; --accent:#077f94; --accent-ink:#ffffff;
     --accent-soft:#dcf1f4; --pdf:#9a3e26; --html:#077f94; --ext:#30506e;
     --missing:#8a9089; --code:#eaf3f4; --shadow: 0 1px 1px rgba(7,45,51,.05), 0 10px 24px rgba(7,45,51,.08);
-    --radius:3px; --grid-dot: rgba(7,127,148,.09);
+    --radius:3px; --grid-dot: rgba(7,127,148,.09); --accent-copper:#a8653a;
     --sheen: linear-gradient(125deg, transparent 12%, rgba(7,127,148,.06) 38%, rgba(7,127,148,.12) 47%, rgba(7,127,148,.06) 56%, transparent 82%);
     --accent-metal: linear-gradient(135deg, #063f4a 0%, #0ca3ba 25%, #7ceaf6 45%, #0ca3ba 65%, #063f4a 100%);
   }
@@ -27,7 +27,7 @@
       --ink-faint:#7a7760; --line:#30321f; --line-strong:#49482c; --accent:#8fae82; --accent-ink:#12150f;
       --accent-soft:#232718; --pdf:#d98c6e; --html:#8fae82; --ext:#86abd6;
       --missing:#746f58; --code:#1e2115; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 12px 28px rgba(0,0,0,.4);
-      --grid-dot: rgba(143,174,130,.08);
+      --grid-dot: rgba(143,174,130,.08); --accent-copper:#c9875c;
       --sheen: linear-gradient(125deg, transparent 12%, rgba(255,255,255,.05) 38%, rgba(255,255,255,.09) 47%, rgba(255,255,255,.05) 56%, transparent 82%);
       --accent-metal: linear-gradient(135deg, #4f6a46 0%, #7da372 25%, #c3dcb8 45%, #7da372 65%, #4f6a46 100%);
     }
@@ -181,7 +181,7 @@
 
   #description{
     padding:28px 28px 26px; margin-bottom:60px; background:var(--bg-raised);
-    border:1px solid var(--line-strong); border-top:3px solid var(--accent);
+    border:1px solid var(--line-strong); border-top:3px solid var(--accent-copper);
   }
   #description h3{margin-top:2px}
   .prose p{font-family:var(--serif); font-size:16.5px; line-height:1.75; color:var(--ink-soft); max-width:680px; margin:0 0 17px}
@@ -232,7 +232,7 @@
   hr.rule{border:none; border-top:1px solid var(--line); margin:30px 0}
 
   .note{
-    border:1px solid var(--line-strong); border-left:3px solid var(--accent); background:var(--bg-raised);
+    border:1px solid var(--line-strong); border-left:3px solid var(--accent-copper); background:var(--bg-raised);
     padding:20px 22px; font-size:14.5px; color:var(--ink-soft);
   }
   .note code{background:var(--code); padding:1px 6px; border-radius:2px; font-size:13px; font-family:ui-monospace,monospace}
