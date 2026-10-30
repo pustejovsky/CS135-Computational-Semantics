@@ -117,10 +117,22 @@
   #description h3{margin-top:2px}
   .prose p{font-family:var(--serif); font-size:16.5px; line-height:1.75; color:var(--ink-soft); max-width:680px; margin:0 0 17px}
   .prose p:last-child{margin-bottom:0}
-  .prose p:first-of-type::first-letter{
+  .prose > p:first-of-type::first-letter{
     font-family:var(--display); font-weight:700; font-size:3.4em; line-height:.72;
     float:left; margin:6px 9px 0 0; color:var(--accent);
   }
+  .read-more{
+    display:inline-flex; align-items:center; gap:6px; margin:-4px 0 0; padding:4px 0;
+    font-family:var(--serif); font-size:14.5px; font-weight:600; color:var(--accent);
+    background:none; border:none; cursor:pointer;
+  }
+  .read-more:hover{text-decoration:underline}
+  .read-more-icon{display:inline-block; font-size:12px; transition:transform .25s ease}
+  .read-more[aria-expanded="true"] .read-more-icon{transform:rotate(180deg)}
+  .prose-more{max-height:0; overflow:hidden; opacity:0; transition:max-height .45s ease, opacity .35s ease}
+  .prose-more.expanded{opacity:1}
+  .prose-more p:first-child{margin-top:17px}
+
   .source-note{font-family:var(--sans); font-size:12.5px; color:var(--ink-faint); margin:18px 0 0}
   .source-note a{font-weight:600}
   @media (max-width:600px){
@@ -326,8 +338,14 @@
     <div class="prose">
       <p>This course studies the computational treatment of meaning in natural language, following a single question across two traditions: what structure does meaning composition require?</p>
       <p>The first unit develops the logical answer – the lambda calculus, semantic types, models, and a working interpreted fragment of English – with quantification and scope as the unit's capstone phenomena. The second unit develops the distributional answer: meaning as vectors learned from text. It ends at the composition problem, where vector representations turn out to lose exactly the structural information (who did what to whom) that the logical tradition captures naturally.</p>
-      <p>The final and largest unit develops a candidate reconciliation. We first recover a forty-year research tradition that standard NLP histories skip: the program of building structured, compositional meaning inside vector spaces (tensor product representations, holographic reduced representations, vector symbolic architectures, categorical models). We then build the mathematics that tradition kept reaching for – geometric, or Clifford, algebra: blades, grades, the geometric product, contraction, and rotors. Finally, we study Functional Geometric Algebra (FGA), a recent framework in which grade encodes arity, the wedge product implements binding, contraction implements function application, and rotors implement type coercion.</p>
-      <p>You will implement a compositional fragment of English twice – once in the logical tradition and once in the geometric one – and evaluate the comparison yourself. The course closes with genuinely open research problems in this area, and final projects may engage them directly.</p>
+      <button type="button" class="read-more" id="readMoreBtn" aria-expanded="false" aria-controls="moreProse">
+        <span class="read-more-label">Read more</span>
+        <span class="read-more-icon" aria-hidden="true">↓</span>
+      </button>
+      <div class="prose-more" id="moreProse">
+        <p>The final and largest unit develops a candidate reconciliation. We first recover a forty-year research tradition that standard NLP histories skip: the program of building structured, compositional meaning inside vector spaces (tensor product representations, holographic reduced representations, vector symbolic architectures, categorical models). We then build the mathematics that tradition kept reaching for – geometric, or Clifford, algebra: blades, grades, the geometric product, contraction, and rotors. Finally, we study Functional Geometric Algebra (FGA), a recent framework in which grade encodes arity, the wedge product implements binding, contraction implements function application, and rotors implement type coercion.</p>
+        <p>You will implement a compositional fragment of English twice – once in the logical tradition and once in the geometric one – and evaluate the comparison yourself. The course closes with genuinely open research problems in this area, and final projects may engage them directly.</p>
+      </div>
     </div>
     <p class="source-note">From the <a href="File_Course_Syllabus_.474050/content/CS135_Fall2026.pdf">Course Syllabus</a>, Fall 2026.</p>
   </section>
@@ -498,6 +516,33 @@
     sections.forEach(function(s){ io.observe(s); });
   } else {
     sections.forEach(function(s){ s.classList.add('in-view'); });
+  }
+
+  // Read more / show less toggle for the course description
+  var readMoreBtn = document.getElementById('readMoreBtn');
+  var moreProse = document.getElementById('moreProse');
+  if (readMoreBtn && moreProse) {
+    readMoreBtn.addEventListener('click', function(){
+      var expanded = readMoreBtn.getAttribute('aria-expanded') === 'true';
+      readMoreBtn.setAttribute('aria-expanded', String(!expanded));
+      readMoreBtn.querySelector('.read-more-label').textContent = expanded ? 'Read more' : 'Show less';
+      if (expanded) {
+        moreProse.style.maxHeight = moreProse.scrollHeight + 'px';
+        requestAnimationFrame(function(){
+          moreProse.classList.remove('expanded');
+          moreProse.style.maxHeight = '0px';
+        });
+      } else {
+        moreProse.classList.add('expanded');
+        moreProse.style.maxHeight = moreProse.scrollHeight + 'px';
+        moreProse.addEventListener('transitionend', function onEnd(e){
+          if (e.propertyName === 'max-height') {
+            moreProse.style.maxHeight = 'none';
+            moreProse.removeEventListener('transitionend', onEnd);
+          }
+        });
+      }
+    });
   }
 
   // Count-up stats
