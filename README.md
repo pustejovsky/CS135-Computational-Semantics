@@ -118,6 +118,8 @@ contextual representations, alongside the algebra that underlies them.
 
 ### Part IV — Functional Geometric Algebra (8 sessions)
 
+Slides not yet posted — section is live on the site with a "materials coming soon" placeholder.
+
 ### Recitations and labs
 
 - Lab 1: Haskell — setup and basics · `lab_1.html`
