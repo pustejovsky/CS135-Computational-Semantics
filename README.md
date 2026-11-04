@@ -101,13 +101,11 @@ contextual representations, alongside the algebra that underlies them.
   *(added directly to the repo, not part of the original Moodle export)*
 - Quiz 1 sample questions, with and without answers
 
-### Part III — The Algebraic Thread and Geometric Algebra (5 sessions)
+### Part III — The Algebraic Thread and Geometric Algebra
 
 - The Fourier Transform, Typed — a matrix–vector product, a fast factorization, and a change of basis that changes what coordinates mean · `session11f_fourier_typed.pdf`
   *(added directly to the repo, not part of the original Moodle export)*
 - Vector Symbolic Architectures — structure without symbols, and where the symbols come back · `session12_vsa.pdf`
-  *(added directly to the repo, not part of the original Moodle export)*
-- Quadratic Forms and the Clifford Product — from the diagonal of a bilinear form to the algebra it specifies · `session13_quadratic_forms.pdf`
   *(added directly to the repo, not part of the original Moodle export)*
 - Holographic Reduced Representations — Plate's system, step by step · `session12a_hrr.pdf`
   *(added directly to the repo, not part of the original Moodle export)*
@@ -118,7 +116,16 @@ contextual representations, alongside the algebra that underlies them.
 
 ### Part IV — Functional Geometric Algebra (8 sessions)
 
-Slides not yet posted — section is live on the site with a "materials coming soon" placeholder.
+4 of 8 sessions posted so far; the rest are a "materials coming soon" placeholder on the site.
+
+- From Average and Difference to the Wedge — what every VSA binding keeps, what it drops, and the object that keeps both · `session12_bridge_wedge-expanded.pdf`
+  *(added directly to the repo, not part of the original Moodle export)*
+- Quadratic Forms and the Clifford Product — from the diagonal of a bilinear form to the algebra it specifies · `session13_quadratic_forms.pdf`
+  *(added directly to the repo, not part of the original Moodle export; moved here from Part III)*
+- Programs and Interpreters — the quadratic form as the interpreter of the Clifford algebra · `session13b_programs_interpreters.pdf`
+  *(added directly to the repo, not part of the original Moodle export)*
+- Wedge, Dual, and Binding — the cross product as a macro, and what a typed binding costs · `session13c_wedge_dual_binding.pdf`
+  *(added directly to the repo, not part of the original Moodle export)*
 
 ### Recitations and labs
 
