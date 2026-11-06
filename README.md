@@ -116,9 +116,11 @@ contextual representations, alongside the algebra that underlies them.
 
 ### Part IV — Functional Geometric Algebra (8 sessions)
 
-4 of 8 sessions posted so far; the rest are a "materials coming soon" placeholder on the site.
+5 of 8 sessions posted so far; the rest are a "materials coming soon" placeholder on the site.
 
 - From Average and Difference to the Wedge — what every VSA binding keeps, what it drops, and the object that keeps both · `session12_bridge_wedge-expanded.pdf`
+  *(added directly to the repo, not part of the original Moodle export)*
+- Signatures — what the inner product has been assuming, how to declare it differently, and what each declaration does · `session13_signatures_gently.pdf`
   *(added directly to the repo, not part of the original Moodle export)*
 - Quadratic Forms and the Clifford Product — from the diagonal of a bilinear form to the algebra it specifies · `session13_quadratic_forms.pdf`
   *(added directly to the repo, not part of the original Moodle export; moved here from Part III)*
