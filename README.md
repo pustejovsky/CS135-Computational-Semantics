@@ -103,6 +103,10 @@ contextual representations, alongside the algebra that underlies them.
 
 ### Part III — The Algebraic Thread and Geometric Algebra
 
+- The Symmetric and Antisymmetric Halves — one decomposition, from Babylon to the geometric product · `session11_sym_antisym.pdf`
+  *(added directly to the repo, not part of the original Moodle export)*
+- Why Average and Difference Work — the mechanism behind the symmetric–antisymmetric split, from two numbers to Clifford's product · `session11a_avgdiff_mechanism.pdf`
+  *(added directly to the repo, not part of the original Moodle export)*
 - The Fourier Transform, Typed — a matrix–vector product, a fast factorization, and a change of basis that changes what coordinates mean · `session11f_fourier_typed.pdf`
   *(added directly to the repo, not part of the original Moodle export)*
 - Vector Symbolic Architectures — structure without symbols, and where the symbols come back · `session12_vsa.pdf`
@@ -116,11 +120,13 @@ contextual representations, alongside the algebra that underlies them.
 
 ### Part IV — Functional Geometric Algebra (8 sessions)
 
-5 of 8 sessions posted so far; the rest are a "materials coming soon" placeholder on the site.
+6 of 8 sessions posted so far; the rest are a "materials coming soon" placeholder on the site.
 
 - From Average and Difference to the Wedge — what every VSA binding keeps, what it drops, and the object that keeps both · `session12_bridge_wedge-expanded.pdf`
   *(added directly to the repo, not part of the original Moodle export)*
 - Signatures — what the inner product has been assuming, how to declare it differently, and what each declaration does · `session13_signatures_gently.pdf`
+  *(added directly to the repo, not part of the original Moodle export)*
+- Signatures, Continued — polarization, reading a signature off a learned comparison, and the road to a product of vectors · `session13a_signatures_continued.pdf`
   *(added directly to the repo, not part of the original Moodle export)*
 - Quadratic Forms and the Clifford Product — from a declared quadratic form to the product it specifies · `session13_quadratic_forms.pdf`
   *(added directly to the repo, not part of the original Moodle export; moved here from Part III)*
