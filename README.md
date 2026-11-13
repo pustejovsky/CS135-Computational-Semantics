@@ -120,7 +120,7 @@ contextual representations, alongside the algebra that underlies them.
 
 ### Part IV — Functional Geometric Algebra (8 sessions)
 
-6 of 8 sessions posted so far; the rest are a "materials coming soon" placeholder on the site.
+7 of 8 sessions posted so far; the rest are a "materials coming soon" placeholder on the site.
 
 - From Average and Difference to the Wedge — what every VSA binding keeps, what it drops, and the object that keeps both · `session12_bridge_wedge-expanded.pdf`
   *(added directly to the repo, not part of the original Moodle export)*
@@ -133,6 +133,8 @@ contextual representations, alongside the algebra that underlies them.
 - Programs and Interpreters — the quadratic form as the interpreter of the Clifford algebra · `session13b_programs_interpreters.pdf`
   *(added directly to the repo, not part of the original Moodle export)*
 - Wedge, Dual, and Binding — the cross product as a macro, and what a typed binding costs · `session13c_wedge_dual_binding.pdf`
+  *(added directly to the repo, not part of the original Moodle export)*
+- Binding, Bilinear Forms, and the Geometric Product — what the wedge and the geometric product do for binding, and how FGA reads the result as meaning · `session13d_binding_bilinear_product.pdf`
   *(added directly to the repo, not part of the original Moodle export)*
 
 ### Recitations and labs
