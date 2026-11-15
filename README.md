@@ -118,9 +118,9 @@ contextual representations, alongside the algebra that underlies them.
 - How HRR Learns — storing, gradients, and the comparison with learned bilinear maps and attention · `session12a_hrr_learning.pdf`
   *(added directly to the repo, not part of the original Moodle export)*
 
-### Part IV — Functional Geometric Algebra (8 sessions)
+### Part IV — Functional Geometric Algebra
 
-7 of 8 sessions posted so far; the rest are a "materials coming soon" placeholder on the site.
+All sessions posted.
 
 - From Average and Difference to the Wedge — what every VSA binding keeps, what it drops, and the object that keeps both · `session12_bridge_wedge-expanded.pdf`
   *(added directly to the repo, not part of the original Moodle export)*
@@ -136,6 +136,14 @@ contextual representations, alongside the algebra that underlies them.
   *(added directly to the repo, not part of the original Moodle export)*
 - Binding, Bilinear Forms, and the Geometric Product — what the wedge and the geometric product do for binding, and how FGA reads the result as meaning · `session13d_binding_bilinear_product.pdf`
   *(added directly to the repo, not part of the original Moodle export)*
+- The Bivector as a Reified Matrix — bilinear forms, the geometric product, and relations in FGA · `session13e_bivector_reified.pdf`
+  *(added directly to the repo, not part of the original Moodle export)*
+- DisCoCat: Compositionality, Learnability, and Bilinear Forms — grammar decides which slot each word fills; data decide the numbers · `session13f_discocat_bilinear.pdf`
+  *(added directly to the repo, not part of the original Moodle export)*
+- From Multi-Head Attention to the Geometric Product — what a head computes, what it keeps, and what the algebra would keep · `session13g_attention_to_gp.pdf`
+  *(added directly to the repo, not part of the original Moodle export)*
+- Mechanistic Interpretability and Geometric Interpretability — two ways of reading a model, and what this course contributes · `session13h_geometric_interpretability.pdf`
+  *(added directly to the repo, not part of the original Moodle export; closing lecture)*
 
 ### Recitations and labs
 
