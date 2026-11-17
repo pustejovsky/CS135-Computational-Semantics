@@ -120,8 +120,6 @@ contextual representations, alongside the algebra that underlies them.
 
 ### Part IV — Functional Geometric Algebra
 
-All sessions posted.
-
 - From Average and Difference to the Wedge — what every VSA binding keeps, what it drops, and the object that keeps both · `session12_bridge_wedge-expanded.pdf`
   *(added directly to the repo, not part of the original Moodle export)*
 - Signatures — what the inner product has been assuming, how to declare it differently, and what each declaration does · `session13_signatures_gently.pdf`
@@ -143,7 +141,11 @@ All sessions posted.
 - From Multi-Head Attention to the Geometric Product — what a head computes, what it keeps, and what the algebra would keep · `session13g_attention_to_gp.pdf`
   *(added directly to the repo, not part of the original Moodle export)*
 - Mechanistic Interpretability and Geometric Interpretability — two ways of reading a model, and what this course contributes · `session13h_geometric_interpretability.pdf`
-  *(added directly to the repo, not part of the original Moodle export; closing lecture)*
+  *(added directly to the repo, not part of the original Moodle export)*
+- What an Attention Head's Score Loses, and How Several Heads Recover It — one worked example, following the comparison of a head with the geometric product · `session13i_head_score.pdf`
+  *(added directly to the repo, not part of the original Moodle export)*
+- Lexical Meaning in FGA — modification, coercion, and regular polysemy: selecting an aspect of a meaning, and turning one meaning into another · `session13j_fga2_lexical.pdf`
+  *(added directly to the repo, not part of the original Moodle export)*
 
 ### Recitations and labs
 
