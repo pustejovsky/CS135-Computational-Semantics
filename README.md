@@ -145,6 +145,10 @@ contextual representations, alongside the algebra that underlies them.
 - What an Attention Head's Score Loses, and How Several Heads Recover It — one worked example, following the comparison of a head with the geometric product · `session13i_head_score.pdf`
   *(added directly to the repo, not part of the original Moodle export)*
 - Lexical Meaning in FGA — modification, coercion, and regular polysemy: selecting an aspect of a meaning, and turning one meaning into another · `session13j_fga2_lexical.pdf`
+  *(added directly to the repo, not part of the original Moodle export; revised 2026-11-20 to set up the dot-objects lecture)*
+- Modeling Dot Objects in FGA — the types of *A Survey of Dot Objects* as type blades and vectors · `session13k_dot_objects.pdf`
+  *(added directly to the repo, not part of the original Moodle export)*
+- Three Sentences, Derived Twice — complete derivations in formal semantics and in FGA, step for step · `session13l_derivations.pdf`
   *(added directly to the repo, not part of the original Moodle export)*
 
 ### Recitations and labs
