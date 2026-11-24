@@ -150,6 +150,10 @@ contextual representations, alongside the algebra that underlies them.
   *(added directly to the repo, not part of the original Moodle export)*
 - Three Sentences, Derived Twice — complete derivations in formal semantics and in FGA, step for step · `session13l_derivations.pdf`
   *(added directly to the repo, not part of the original Moodle export)*
+- From Words to Types to Vectors — a first fragment of natural language semantics in FGA · `session13m_word_type_vector.pdf`
+  *(added directly to the repo, not part of the original Moodle export)*
+- Learning in Transformers and Geometric Algebra — two learners side by side: what each one fixes in advance, and what it learns · `session13n_learning_compared.pdf`
+  *(added directly to the repo, not part of the original Moodle export)*
 
 ### Recitations and labs
 
